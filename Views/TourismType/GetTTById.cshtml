@@ -1,0 +1,24 @@
+﻿@model TourismWebApp.ViewModels.TourismTypeViewModel
+
+<div align="center" class="row mt-5 mb-2 container center-block">
+    <h2 class="center-block">@Model.TourismType.Name</h2>
+    <img class="img-thumbnail center-block" src="@Model.TourismType.ImgUrl" width="500" height="500" />
+    <p>@Model.TourismType.Desc</p>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var travel in Model.Travels)
+        {
+            <div class="col-md-4">
+                <h4 style="text-align:center">@travel.Name</h4>
+                <a href="/Travel/GetTravelById/@travel.Id">
+                    <img class="img-thumbnail col-md-12" src="@travel.ImgUrl" />
+                </a>
+                <h4 style="text-align:center">Организатор: @travel.TravelOrganizerName</h4>
+                <h6>@travel.Desc</h6>
+                <br />
+                <br />
+            </div>
+        }
+    </div>
+</div>

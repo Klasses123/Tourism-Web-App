@@ -1,0 +1,16 @@
+﻿@model TourismWebApp.ViewModels.TravelViewModel
+
+<div align="center" class="row mt-5 mb-2 container center-block">
+    <h2 class="center-block">@Model.travel.Name</h2>
+    <img class="img-thumbnail center-block" src="@Model.travel.ImgUrl" width="500" height="500" />
+    <a href="/TravelOrganizer/GetTOByName?name=@Model.travel.TravelOrganizerName">
+        <h3>Организатор: @Model.travel.TravelOrganizerName</h3>
+    </a>
+    <a href="/TourismType/GetTTByName?name=@Model.travel.TourismTypeName">
+        <h3>Тип путешествия: @Model.travel.TourismTypeName</h3>
+    </a>
+    <p>@Model.travel.Desc</p>
+    <h3>Контакты:</h3>
+    <h4>Номер организатора: @Model.TravelOrganizerPhone</h4>
+    <h4>Email организатора: @Model.TravelOrganizerEmail</h4>
+</div>
