@@ -1,12 +1,12 @@
 ﻿@model TourismWebApp.Models.Travel
 
-<h2>Внесение правок в путешествие</h2>
+<h2 class="admin-page">Внесение правок в путешествие</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
+    <div class="form-horizontal admin-page">
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
