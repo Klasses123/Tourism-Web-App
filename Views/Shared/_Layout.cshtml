@@ -4,20 +4,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/Content/Site.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
     <title>@ViewBag.Title Путешествия и туризм</title>
-    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body style="padding: 30px 0 0 0; margin: 0">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 @Html.ActionLink("Главная", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
@@ -29,7 +23,7 @@
             </div>
         </div>
     </div>
-    <div class="container body-content" style="background-color: silver">
+    <div class="container render-body back-img">
         @RenderBody()
         <hr />
         <footer>
@@ -39,6 +33,98 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required:false)
+    @RenderSection("scripts", required: false)
 </body>
 </html>
+
+<style>
+    .back-img {
+        background: url(../../Images/background.jpg) 100% 100%;
+    }
+
+    img {
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        width: 100%;
+        height: 302px;
+    }
+
+    .text {
+        color: #ddd;
+    }
+
+    .single-img-container {
+        width: 420px;
+    }
+
+    footer {
+        color: #ddd;
+    }
+    
+    ::-webkit-scrollbar-button {
+        background-image: url('');
+        background-repeat: no-repeat;
+        width: 5px;
+        height: 0px
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: #222;
+        border: 1px solid #333;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 0px;
+        border-radius: 5px;
+        background-color: #9d9d9d;
+        height: 100px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #ddd;
+    }
+
+    ::-webkit-resizer {
+        background-image: url('');
+        background-repeat: no-repeat;
+        width: 4px;
+        height: 0px
+    }
+
+    ::-webkit-scrollbar {
+        min-width: 0px;
+        max-width: 10px;
+        visibility:initial;
+    }
+
+    .render-body {
+        background-color: silver;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .content-container {
+        margin: 20px 0 0 0;
+        color: #ddd;
+        min-height: 600px;
+        text-align: center;
+    }
+
+    .reference {
+        color: #eee;
+    }
+
+    .reference:hover {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .admin-page {
+        color: #ddd;
+    }
+
+    body {
+        overflow: auto;
+    }
+</style>

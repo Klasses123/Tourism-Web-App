@@ -1,13 +1,13 @@
 ﻿@model TourismWebApp.ViewModels.TravelOrganizersViewModel
 
-<div class="container-fluid">
+<div class="container-fluid content-container">
     <div class="row">
         @foreach (var travelOrganizer in Model.TravelOrganizers)
         {
             <div class="col-md-4">
                 <h4 style="text-align:center">@travelOrganizer.Name</h4>
                 <a href="/TravelOrganizer/GetTOById/@travelOrganizer.Id">
-                    <img class="img-thumbnail col-md-12" src="@travelOrganizer.ImgUrl" />
+                    <img src="@travelOrganizer.ImgUrl" />
                 </a>
                 <p>@travelOrganizer.Desc</p>
                 <h5>Контактные данные:</h5>
